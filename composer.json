@@ -4,7 +4,8 @@
     "homepage": "https://github.com/yagerhw/phphelper",
     "autoload": {
         "psr-4": {
-            "Yager\\Phphelper\\": "src/"
+            "Yager\\Phphelper\\": "src/",
+            "tests\\": "tests/"
         }
     },
     "authors": [
