@@ -20,4 +20,21 @@ class Arrayhw
             ? $array[$key1][$key2]
             : $default;
     }
+
+    /**
+     * 获取 kv 数组
+     * @param array $array
+     * @param string $column
+     * @return array
+     */
+    public static function generateKV(array $array, string $column): array
+    {
+        $return = [];
+
+        foreach ($array as $key => $value) {
+            $return[$key] = $value[$column];
+        }
+
+        return $return;
+    }
 }
