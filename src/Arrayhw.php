@@ -27,7 +27,7 @@ class Arrayhw
      * @param string $column
      * @return array
      */
-    public static function generateKV(array $array, string $column): array
+    public static function kv(array $array, string $column): array
     {
         $return = [];
 
@@ -36,5 +36,16 @@ class Arrayhw
         }
 
         return $return;
+    }
+
+    /**
+     * 弃用，请使用 kv
+     * @param array $array
+     * @param string $column
+     * @return array
+     */
+    public static function generateKV(array $array, string $column): array
+    {
+        return self::kv($array, $column);
     }
 }
