@@ -36,4 +36,22 @@ class Stringhw
         return $string;
     }
 
+    /**
+     * 严格修剪
+     * @param string $string
+     * @return string|null
+     */
+    public static function trim(string $string): ?string
+    {
+        // 1. 清除前后空值
+        $string = trim($string);
+
+        // 2. 排除 null
+        if ($string === 'null') {
+            return null;
+        }
+
+        return $string;
+    }
+
 }
