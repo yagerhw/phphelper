@@ -38,10 +38,10 @@ class Stringhw
 
     /**
      * 严格修剪
-     * @param string $string
+     * @param string|null $string $string
      * @return string|null
      */
-    public static function trim(string $string): ?string
+    public static function trim(?string $string): ?string
     {
         // 1. 清除前后空值
         $string = trim($string);
