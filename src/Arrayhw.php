@@ -6,6 +6,32 @@ namespace Yager\Phphelper;
 
 class Arrayhw
 {
+
+    /**
+     * 判断 数组array 中的 键key 的值是否为空数组
+     * @param $array
+     * @param $key
+     * @return Returnhw
+     */
+    public static function isEmpty2d($array, $key): Returnhw
+    {
+        if (is_array($array) == false) {
+            return new Returnhw(1, 'array 不是数组');
+        }
+
+        if (array_key_exists($key, $array) == false) {
+            return new Returnhw(1, 'array 中不存在 key 键');
+        }
+
+        $value = $array[$key];
+
+        if (is_array($value) == false || count($value) == 0) {
+            return new Returnhw(1, '键key 的值不为数组或者无元素');
+        }
+
+        return new Returnhw(0);
+    }
+
     /**
      * 获取二维数组的值
      * @param $array
