@@ -29,4 +29,11 @@ class Returnhw
     {
         return json_encode($this->getArray());
     }
+
+    public function getData()
+    {
+        return $this->code
+            ? null
+            : $this->data;
+    }
 }
