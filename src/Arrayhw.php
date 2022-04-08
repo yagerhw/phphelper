@@ -51,11 +51,16 @@ class Arrayhw
      * 获取 kv 数组
      * @param array $array
      * @param string $column
+     * @param bool $setEmptyPrefix 是否前置空元素
      * @return array
      */
-    public static function kv(array $array, string $column): array
+    public static function kv(array $array, string $column, bool $setEmptyPrefix = false): array
     {
         $return = [];
+
+        if ($setEmptyPrefix) {
+            $return[''] = '';
+        }
 
         foreach ($array as $key => $value) {
             $return[$key] = $value[$column];
