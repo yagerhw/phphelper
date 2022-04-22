@@ -48,6 +48,29 @@ class Arrayhw
     }
 
     /**
+     * 获取二维数组的键
+     * @param $array
+     * @param $d2key
+     * @param $d2Value
+     * @param $default
+     * @return int|mixed|string|null
+     */
+    public static function getKeyD2($array, $d2key, $d2Value, $default = null)
+    {
+        if (empty($array)) {
+            return $default;
+        }
+
+        foreach ($array as $key => $value) {
+            if (is_array($value) && array_key_exists($d2key, $value) && $value[$d2key] == $d2Value) {
+                return $key;
+            }
+        }
+
+        return $default;
+    }
+
+    /**
      * 获取 kv 数组
      * @param array $array
      * @param string $column
