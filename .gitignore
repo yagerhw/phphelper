@@ -2,3 +2,4 @@
 tests/
 vendor/
 codeception.yml
+README.md.local
