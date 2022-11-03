@@ -76,6 +76,17 @@ trait ConstEnum
         return array_key_exists($enum, $array) ? $array[$enum] : null;
     }
 
+    public static function getColumnByColumn($targetKey, $sourceKey, $sourceValue)
+    {
+        foreach (self::haystack() as $value) {
+            if ($value[$sourceKey] == $sourceValue) {
+                return $value[$targetKey];
+            }
+        }
+
+        return null;
+    }
+
     /**
      * example
      * key: name

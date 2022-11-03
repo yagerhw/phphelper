@@ -10,7 +10,7 @@ class Case_
 {
     use ConstEnum;
 
-    const REGISTER = 0;
+    const SIGN_UP = 0;
     const RESET_PASSWORD = 1;
     const CHANGE_PASSWORD = 2;
 
@@ -18,8 +18,8 @@ class Case_
     {
         return [
             [
-                'id' => self::REGISTER,
-                'slug' => 'register',
+                'id' => self::SIGN_UP,
+                'slug' => 'sign-up',
                 'guest' => true
             ],
             [
