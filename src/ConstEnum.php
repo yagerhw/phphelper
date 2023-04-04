@@ -110,4 +110,22 @@ trait ConstEnum
 
         return array_column($array, $key, 'id');
     }
+
+    /**
+     * example
+     * key: name
+     * value: color
+     * return: ['an' => 'red', 'bang' => 'red', 'chang' => 'black']
+     * @return array
+     */
+    public static function getArrayKv($key, $value)
+    {
+        $array = [];
+        foreach (self::haystack() as $v) {
+            if (array_key_exists($key, $v) && array_key_exists($value, $v)) {
+                $array[$v[$key]] = $v[$value];
+            }
+        }
+        return $array;
+    }
 }
